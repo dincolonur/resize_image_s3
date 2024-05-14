@@ -8,11 +8,12 @@ import base64
 import requests
 import argparse
 
+
 class Operation:
 
     def create(self,
-                 source_bucket_name='onurtest2',
-                 target_bucket_name='onurtest3'):
+               source_bucket_name='source_bucket_name',
+               target_bucket_name='target_bucket_name'):
         """
         @param source_bucket_name: Source Bucket Name
         @param target_bucket_name: Target Bucket Name
@@ -117,6 +118,7 @@ class Operation:
         item_path = os.path.join(folder, item_to_del)
         os.remove(item_path)
 
+
 if __name__ == '__main__':
     """
     Main function: 
@@ -131,11 +133,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description="Resize Image Application",
         epilog="Example Usage:  python3 operation/main.py -p folder_1 "
-               "-s onurtest2 -t onurtest3 -r 500,500 -u http://127.0.0.1:5000/im_size",
+               "-s source_bucket_name -t target_bucket_name -r 500,500 -u http://127.0.0.1:5000/im_size",
     )
     parser.add_argument("-p", help="Partition to be processed", default='folder_1')
-    parser.add_argument("-s", help="Source Bucket Name", default='onurtest2')
-    parser.add_argument("-t", help="Target Bucket Name", default='onurtest3')
+    parser.add_argument("-s", help="Source Bucket Name", default='source_bucket_name')
+    parser.add_argument("-t", help="Target Bucket Name", default='target_bucket_name')
     parser.add_argument("-r", help="Resize dimensions int,int", default='500,500')
     parser.add_argument("-u", help="API url to POST resized Image", default='http://127.0.0.1:5000/im_size')
     args = parser.parse_args()
