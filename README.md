@@ -45,7 +45,7 @@ options:
 
 Example Usage:
 
-python3 operation/main.py -p folder_1 -s onurtest2 -t onurtest3 -r 500,500 -u http://127.0.0.1:5000/im_size
+python3 operation/main.py -p folder_1 -s source_bucket_name -t source_bucket_name -r 500,500 -u http://127.0.0.1:5000/im_size
 
 ```
 
