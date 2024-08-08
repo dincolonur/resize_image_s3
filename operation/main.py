@@ -131,7 +131,7 @@ if __name__ == '__main__':
         5 - Upload the thumbnail images to the target bucket
     """
     parser = argparse.ArgumentParser(
-        description="Resize Image Application",
+        description="Resize Image Application ",
         epilog="Example Usage:  python3 operation/main.py -p folder_1 "
                "-s source_bucket_name -t target_bucket_name -r 500,500 -u http://127.0.0.1:5000/im_size",
     )
